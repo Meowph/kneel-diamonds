@@ -15,9 +15,9 @@ body {
 }
 
 .choices__sizes {
-
+  display: flex;
 }
 
 .choices__styles {
-
+  display: flex;
 }
