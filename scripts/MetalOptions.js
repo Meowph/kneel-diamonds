@@ -8,7 +8,7 @@ export const MetalOptions = async () => {
   let metalsHTML = "<h2>Metals</h2>"
 
    // Use map() to generate new array of strings
-  const metalStringArray = metals.map(
+  const metalStringArray = await metals.map(
     (metal) => {
       return `<div>
         <input type='radio' name='metal' value='${metal.id}'/> ${metal.metal}

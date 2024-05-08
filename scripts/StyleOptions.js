@@ -9,7 +9,7 @@ export const StyleOptions = async () => {
   
 
   // Use map() to generate new array of strings
-  const styleStringArray = styles.map (
+  const styleStringArray = styles.map(
     (style) => {
       return `<div>
       <input type='radio' name='style' value='${style.id}'/> ${style.style}
