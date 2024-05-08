@@ -5,7 +5,7 @@ export const MetalOptions = async () => {
   const metals = await response.json()
 
   // Iterate the submissions and create some <section> representations
-  let metalsHTML = "<h2>Metals</h2>"
+  let metalsHTML = " " //This title is from main.js 
 
    // Use map() to generate new array of strings
   const metalStringArray = await metals.map(

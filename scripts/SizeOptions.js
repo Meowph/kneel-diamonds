@@ -5,7 +5,7 @@ export const SizeOptions = async () => {
   const sizes = await response.json()
 
   // Iterate the submissions and create some <section> representations
-  let sizesHTML = "<h2>Sizes</h2> "
+  let sizesHTML = " " //This title is from main.js 
   
   // Use map() to generate new array of strings
   const sizeStringArray = sizes.map(

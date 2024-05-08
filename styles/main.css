@@ -1,0 +1,23 @@
+
+body {
+  background-color: red;
+}
+
+.choices__metals {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  border: 1px dashed purple;
+  background-color: #c0bebe;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  font-size: smaller;
+}
+
+.choices__sizes {
+
+}
+
+.choices__styles {
+
+}

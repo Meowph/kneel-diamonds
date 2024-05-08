@@ -5,7 +5,7 @@ export const StyleOptions = async () => {
   const styles = await response.json()
 
   // Iterate the submissions and create some <section> representations
-  let stylesHTML = "<h2>Styles</h2> "
+  let stylesHTML = " " //This title is from main.js 
   
 
   // Use map() to generate new array of strings

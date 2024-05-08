@@ -2,7 +2,7 @@ import { MetalOptions } from './MetalOptions.js'
 import { SizeOptions } from './SizeOptions.js'
 import { StyleOptions } from './StyleOptions.js'
 
-const render = async () => {
+const render = async () => { //async always returns a promise & then awaits the fucntions o the right of the awaita form line 6-7... goes in order
     const metalOptionsHTML = await MetalOptions()
     const sizeOptionsHTML = await SizeOptions()
     const styleOptionsHTML = await StyleOptions()
