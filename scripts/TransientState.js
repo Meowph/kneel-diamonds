@@ -1,15 +1,27 @@
 // Set up the transient state data structure and provide initial values
+
+//Are the properties supposed to be in string form (" ")? 
 const transientState = {
-  "style": " ",
-  "carets": " ",
-  "metal": " ",
-  "price": 0
+  "metalId": 0,
+  "sizeId": 0,
+  "styleId": 0
 }
 
-export const setMetalChoice = (chosenMetal) => {
-  transientState.metal = chosenMetal
-  console.log(transientState)
-}
+  export const setMetalChoice = (chosenMetalId) => {
+    transientState.metalId = chosenMetalId
+    console.log("metalId:", transientState.metalId)
+  }
+
+  export const setSizeChoice = (chosenSizeId) => {
+    transientState.sizeId = chosenSizeId
+    console.log("sizeId:", transientState.sizeId)
+  }
+
+  export const setStyleChoice = (chosenStyleId) => {
+    transientState.styleId = chosenStyleId
+    console.log("styleId:", transientState.styleId)
+  }
+
 
 export const placeOrder = async () => {
   /*
