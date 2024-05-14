@@ -1,15 +1,16 @@
 import { MetalOptions } from './MetalOptions.js'
 import { SizeOptions } from './SizeOptions.js'
 import { StyleOptions } from './StyleOptions.js'
-import { OrderButton } from './OrdersPlacedButton.js'
-import { Orders } from './PlacedOrders.js'
+import { Orders } from './Orders.js'
+import { PlaceOrder } from './PlacedOrders.js'
 
+const container = document.querySelector("#container")
 
 export const render = async () => { //async always returns a promise & then awaits the fucntions o the right of the awaita form line 6-7... goes in order
     const metalOptionsHTML = await MetalOptions()
     const sizeOptionsHTML = await SizeOptions()
     const styleOptionsHTML = await StyleOptions()
-    const buttonHTML = await OrderButton ()
+    const buttonHTML = await PlaceOrder ()
     const orderHTML = await Orders() 
 
     const composedHTML = `
@@ -32,10 +33,12 @@ export const render = async () => { //async always returns a promise & then awai
             </section>
         </article>
 
+
         <article class="order">
                 ${buttonHTML}
 
         </article>
+
 
         <article class="customOrders">
             <h2>Custom Jewelry Orders</h2>
@@ -45,5 +48,11 @@ export const render = async () => { //async always returns a promise & then awai
 
     container.innerHTML = composedHTML
 }
+
+// document.addEventListener("newOrder", render)
+document.addEventListener("newOrder", event => {
+    console.log("State of data has changed. Regenerating HTML...")
+    render()
+})
 
 render ()

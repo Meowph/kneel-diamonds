@@ -1,16 +1,13 @@
-export const Orders = async () => {
-  const fetchResponse = await fetch("http://localhost:8088/orders")
-  const order = fetchResponse.json()
+import { saveOrder } from "./TransientState.js"
 
-  let ordersHTML = order.map(
-      (order) => {
-        return `
-        <input type='radio' name='order' value='${order.id}'/> ${order.id}
-        </div>`
-      }
-  )
-
-  return ordersHTML
+export const PlaceOrder = () => {
+    
+    const handleSaveOrder = (e) => {
+        if(e.target.id === "orderButton"){
+                saveOrder()
+            }
+    }
+    
+    document.addEventListener("click", handleSaveOrder)
+    return `<button id="orderButton">Create Custom Order</button>`
 }
-
-export const 

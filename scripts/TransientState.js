@@ -1,6 +1,6 @@
 // Set up the transient state data structure and provide initial values
 
-//Are the properties supposed to be in string form (" ")? 
+//Are the properties supposed to be in string form (" ")? no Stringify needed since it does it in database... doesn't really matter though
 const transientState = {
   "metalId": 0,
   "sizeId": 0,
@@ -23,7 +23,7 @@ const transientState = {
   }
 
 
-export const placeOrder = async () => {
+export const saveOrder = async () => {
   /*
       Add the required keys to the object below that are
       needed for a POST operation.
@@ -38,7 +38,9 @@ export const placeOrder = async () => {
         body: JSON.stringify(transientState) //converting JS to string
       }
 
-  // Send the transient state to your API
-  const response = await fetch("http://localhost:8088/orders", postOptions) //stays GET request until postOptions is added as the 2nd argument
+    // Send the transient state to your API
+    const response = await fetch("http://localhost:8088/orders", postOptions)
+    const customEvent = new CustomEvent("newOrder")
+    document.dispatchEvent(customEvent)
 
 }
